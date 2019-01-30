@@ -25,6 +25,7 @@ func ShallowCopyStringSlice(slice []string) []string {
 	return newSlice
 }
 
+// BenchmarkDeepCopyStringSliceOld-8   	 5000000	       355 ns/op
 func BenchmarkDeepCopyStringSliceOld(b *testing.B) {
 	var sample = []string{"string0", "", "string1"}
 	var copy []string
@@ -38,6 +39,7 @@ func BenchmarkDeepCopyStringSliceOld(b *testing.B) {
 	}
 }
 
+// BenchmarkShallowCopyStringSlice-8   	10000000	       162 ns/op
 func BenchmarkShallowCopyStringSlice(b *testing.B) {
 	var sample = []string{"string0", "", "string1"}
 	var copy []string
@@ -51,6 +53,7 @@ func BenchmarkShallowCopyStringSlice(b *testing.B) {
 	}
 }
 
+// BenchmarkDeepCopyStringSlice-8      	10000000	       143 ns/op
 func BenchmarkDeepCopyStringSlice(b *testing.B) {
 	var sample = []string{"string0", "", "string1"}
 	var copy []string
